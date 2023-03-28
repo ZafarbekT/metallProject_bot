@@ -1,6 +1,7 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
+from aiogram.contrib.middlewares.i18n import I18nMiddleware
 
-async def menu_uz():
+async def menu_uz(_: I18nMiddleware):
 
     buttons = ReplyKeyboardMarkup(
         keyboard=[
