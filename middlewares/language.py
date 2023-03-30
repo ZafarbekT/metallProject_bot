@@ -15,7 +15,8 @@ class I18nMiddleware(BaseI18nMiddleware):
     async def get_user_locale(self, action, data):
         user = types.User.get_current()
         db_language = await get_lang(id=user.id)
-        if db_language[0]['lang'] is None:
-            return user.locale
+
+        if db_language:
+            return db_language['lang']
         else:
-            return db_language[0]['lang']
+            return user.locale

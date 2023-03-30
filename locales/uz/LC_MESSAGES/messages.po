@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-03-28 10:43+0500\n"
+"POT-Creation-Date: 2023-03-30 10:54+0500\n"
 "PO-Revision-Date: 2023-03-28 10:27+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: uz\n"
@@ -18,15 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
 
-#: handlers/users/product_handler.py:6
-msgid "📃 Maxsulotlar"
-msgstr ""
-
-#: handlers/users/product_handler.py:11
-msgid "📞 Biz bilan bog'laning"
-msgstr ""
-
-#: handlers/users/product_handler.py:15
+#: handlers/users/product_handler.py:16
 msgid ""
 "\n"
 "📩 Telegram orqali buyurtma qilish uchun : \n"
@@ -41,16 +33,32 @@ msgid ""
 "{}\n"
 msgstr ""
 
-#: handlers/users/product_handler.py:29
+#: handlers/users/product_menu_handler.py:18
 msgid "Ma'lumot topilmadi!"
 msgstr ""
 
-#: handlers/users/product_handler.py:31
-msgid "📍 Bizning Manzil"
+#: handlers/users/product_menu_handler.py:29
+msgid "Manzil topilmadi!"
 msgstr ""
 
-#: handlers/users/product_handler.py:40
-msgid "Manzil topilmadi!"
+#: handlers/users/start.py:21
+msgid "Qiziqish toifasini tanlang👇"
+msgstr ""
+
+#: keyboards/default/menu_buttons.py:48
+msgid "📃 Maxsulotlar"
+msgstr ""
+
+#: keyboards/default/menu_buttons.py:51
+msgid "📞 Biz bilan bog'laning"
+msgstr ""
+
+#: keyboards/default/menu_buttons.py:52
+msgid "⚙ Sozlash"
+msgstr ""
+
+#: keyboards/default/menu_buttons.py:55
+msgid "📍 Bizning Manzil"
 msgstr ""
 
 #~ msgid "⚙ Sozlash"

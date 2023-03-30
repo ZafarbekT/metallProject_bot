@@ -2,13 +2,13 @@ from aiohttp import ClientSession
 from data import config
 
 url = config.MYURL
-# head = {'Authorization': f'token {config.MYTOKEN}'}
+head = {'Authorization': f'token {config.MYTOKEN}'}
 
 async def user_post( username: str, telegram_id: str):
     async with ClientSession() as session:
         http = f"{url}/user/"
   
-        async with session.post(url=http, data = {'username': username, 'telegram_id': telegram_id}) as response: #, headers=head
+        async with session.post(url=http, data = {'username': username, 'telegram_id': telegram_id}, headers=head) as response:
             if response.status == 201:
                  return True
             else:
@@ -18,7 +18,18 @@ async def product_get():
     async with ClientSession() as session:
         http = f"{url}/product/"
   
-        async with session.get(url=http) as response:
+        async with session.get(url=http, headers=head) as response:
+            if response.status == 200:
+                 result = await response.json()
+                 return result
+            else:
+                 return False
+            
+async def product_get_by_id(id):
+    async with ClientSession() as session:
+        http = f"{url}/product/{id}/"
+  
+        async with session.get(url=http, headers=head) as response:
             if response.status == 200:
                  result = await response.json()
                  return result
@@ -29,7 +40,7 @@ async def info_get():
     async with ClientSession() as session:
         http = f"{url}/info/"
   
-        async with session.get(url=http) as response:
+        async with session.get(url=http, headers=head) as response:
             if response.status == 200:
                  result = await response.json()
                  return result
@@ -40,7 +51,7 @@ async def get_lang(id):
     async with ClientSession() as session:
         http = f"{url}/user/{id}/"
   
-        async with session.get(url=http) as response:
+        async with session.get(url=http, headers=head) as response:
             if response.status == 200:
                  result = await response.json()
                  return result
@@ -51,7 +62,7 @@ async def put_lang(id, lang):
     async with ClientSession() as session:
         http = f"{url}/user/{id}/"
   
-        async with session.put(url=http, data = {'lang': lang}) as response:
+        async with session.put(url=http, data = {'lang': lang}, headers=head) as response:
             if response.status == 200:
                  return True
             else:

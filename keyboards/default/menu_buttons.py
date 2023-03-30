@@ -1,5 +1,6 @@
 from aiogram.types import KeyboardButton, ReplyKeyboardMarkup
 from aiogram.contrib.middlewares.i18n import I18nMiddleware
+from loader import _
 
 async def menu_uz(_: I18nMiddleware):
 
@@ -34,6 +35,24 @@ async def menu_ru():
             ],
             [
                 KeyboardButton('📍 Наше Локация')
+            ]
+        ], resize_keyboard=True
+    )
+
+    return buttons
+
+async def menu_all(message):
+    buttons = ReplyKeyboardMarkup(
+        keyboard=[
+            [
+                KeyboardButton(_('📃 Maxsulotlar'))
+            ],
+            [
+                KeyboardButton(_("📞 Biz bilan bog'laning")),
+                KeyboardButton(_("⚙ Sozlash"))
+            ],
+            [
+                KeyboardButton(_("📍 Bizning Manzil"))
             ]
         ], resize_keyboard=True
     )
